@@ -17,15 +17,19 @@ References:
 
  + JSON
    - http://en.wikipedia.org/wiki/JSON
-   - https://developer.mozilla.org/en-US/docs/JSON
-   - https://developer.mozilla.org/en-US/docs/JSON#JSON_in_Firefox_2
+   - https://developer.mozilla.org/en-US/docs/JSON  - https://developer.mozilla.org/en-US/docs/JSON#JSON_in_Firefox_2
+
++ restler.js
+   - https://github.com/danwrong/Restler/  
 */
 
 var fs = require('fs');
 var program = require('commander');
+var rest = require('restler');
 var cheerio = require('cheerio');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
+var URL_DEFAULT = "index.html";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
@@ -37,21 +41,26 @@ var assertFileExists = function(infile) {
 };
 
 var cheerioHtmlFile = function(htmlfile) {
-    return cheerio.load(fs.readFileSync(htmlfile));
+
+   return cheerio.load(fs.readFileSync(htmlfile));
 };
 
 var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
 
+
 var checkHtmlFile = function(htmlfile, checksfile) {
-    $ = cheerioHtmlFile(htmlfile);
+    var instr = htmlfile.toString();
+    $ = cheerio.load(instr);
     var checks = loadChecks(checksfile).sort();
     var out = {};
     for(var ii in checks) {
         var present = $(checks[ii]).length > 0;
         out[checks[ii]] = present;
     }
+    var outJson = JSON.strigify(out, null, 4);
+    console.log(outJson);
     return out;
 };
 
@@ -65,10 +74,26 @@ if(require.main == module) {
     program
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-c, --checks <check_file>', 'Path to checks.json', clone(assertFileExists), CHECKSFILE_DEFAULT)
-        .parse(process.argv);
-    var checkJson = checkHtmlFile(program.file, program.checks);
-    var outJson = JSON.stringify(checkJson, null, 4);
-    console.log(outJson);
-} else {
+        .option('-u, --url <url_file>', 'URL', URL_DEFAULT) 
+	.parse(process.argv);
+	if(program.url != URL_DEFAULT) {
+		rest.get(program.url).on('complete', function(result) {
+    			console.log(result);
+				if (result instanceof Error) {
+	    				sys.puts('Error: ' + result.message);
+	    				process.exit(1);
+				}
+				else {
+					console.log("Checking " + program.url);
+					checkHtmlFile(result, program.checks);
+				}
+			});
+	} 
+	else {
+	    var checkJson = checkHtmlFile(program.file, program.checks);
+	    var outJson = JSON.stringify(checkJson, null, 4);
+	    console.log(outJson);
+	}
+} else {	 
     exports.checkHtmlFile = checkHtmlFile;
 }
