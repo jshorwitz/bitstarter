@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -112,18 +111,6 @@
 		  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
 		  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 		  })();
-		  <script type="text/javascript">
-		    var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
-
-		    // Configure the Keen object with your Project ID and (optional) access keys.
-		    Keen.configure({
-		    projectId: "5209729b3843310abc000002"   
-		    writeKey: "7e4598a06c08414e73530d002b4c4e362024a8ea1b341e5acb1ee07dae163698e1af5cfd46d6ad7c46f2d8edd220db93184392cf8fb414aaccbaf3d10f2630cdb6f319d82b3a121458189d92579f8b7633747ec5bc27ddd5a6e10d8693e0d1c048143241b849f2e961c8f826bd4d8050", // required for sending events
-		    readKey: "520d9a55ef2e7d403ca30dd89715386c74c81282a7defaf2abc0cd23c3feca9883c08220a882f5d32b7c89cbe75fc62e368e9922bb70e26d2f42c028c337236aad51b2d44d97803ca33f7baffe4488e0e91a44f858a04ef7ff641f0461f828354e4f84facc1da34885c0bbe63e7ac34f"    // required for doing analysis
-		    });
-		  </script>
-
-
 		</script>
 	</head>
 	<body>
@@ -231,7 +218,8 @@
 			     <!-- <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script> -->
 			      <!-- Social buttons are not included in the default Bootstrap. -->
 			      <!-- See: http://noizwaves.github.io/bootstrap-social-buttions -->      
-			      <button class="btn btn-twitter"><i class="icon-twitter"></i> | Twitter </button>
+			          <a href="https://twitter.com/share" class="btn btn-twitter" data-text="Checkout this cool Bitstarter project" data-related="whatisanalytics" data-counturl="http://www.savorysmoothy.com" data-lang="en" data-size="large" data-count="none"><i class="icon-twitter"></i> | Twitter </a>
+				  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			      <button class="btn btn-facebook"><i class="icon-facebook"></i> | Facebook </button>
 			    </div>
 			  </div>
@@ -239,7 +227,7 @@
 			</div>
 
 			<!-- Beyond this part the marketing copy begins. -->
-			<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-alig -->
+			<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/text-align -->
 			<!-- http://twitter.github.io/bootstrap/base-css.html#images -->
 			<!-- http://placehold.it -->
 			<div class="row-fluid section1">
@@ -275,26 +263,18 @@
 			      <div class="accordion-group">
 				<div class="accordion-heading">
 				  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-				    What does FAQ stand for?
+				    What are the smoothies that you'll make?
 				  </a>
 				</div>
-				<div id="collapseOne" class"accordion-body collapse">
+				<div id="collapseOne" class="accordion-body collapse">
 				  <div class="accordion-inner">
-				    Frequently Asked Question.
+				   <p> Chocolate Spinach</p> 
+				   <p> Black Forest Truffle</p>
+				   <p> Bread Pudding</p>
+				   <p> Asparagus and Lemon</p>
 				  </div>
 				</div>
 		              </div>
-			      <div class="accordion-group">
-				<div class="accordion-heading">
-				  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-				    What's a Frequently Asked Question?
-				  </a>
-				</div>
-				<div id="collapseTwo" class="accordion-body collapse">
-				  <div class="accordion-inner">
-				    A question which is commonly asked by users.
-				  </div>
-				</div>
 			      </div>
 			    </div>
 			  </div>
