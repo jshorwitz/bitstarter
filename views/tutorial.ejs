@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Alpine Data Labs Demonstration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-top: 50px;      
+      padding-bottom: 10px;
+      color: #999;
+      background-color: #000;
+    }
+    footer a:link {
+      color: #0088cc;
+    }
+    footer a:visited {
+      color: #0088cc;
+    }
+    footer a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:active {
+      color: #999;
+    }
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar-inverse .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      background-image: linear-gradient(to bottom, #000, #000);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 5px 20px 5px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    .navbar .brand img {
+      height: 35px;
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 20px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+      color: #111;
+    }
+
+    .carousel .item {
+      height: 550px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 550px;
+      min-width: 100%;
+    }
+
+    .carousel-caption {
+      position: static;
+      max-width: 350px;
+      padding: 0 20px;
+      margin-top: 120px;
+      float: right;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      opacity:0.8;
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+    @media (min-width: 1200px) {
+    }
+    @media (max-width: 979px) {
+      .navbar .brand {
+        padding: 5px 20px 5px; /* Increase vertical padding to match navbar links */
+        font-size: 16px;
+        font-weight: bold;
+        text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+      }
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-fixed-top {
+        position: absolute;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: 0;
+      }
+      .navbar-fixed-top .navbar-inner {
+        padding: 0px;
+      }
+      .carousel .item {
+        height: 450px;
+      }
+      .carousel img {
+        width: auto;
+        height: 450px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        
+      }
+      .navbar-fixed-top{
+        margin: 0;
+      }
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 55%;
+        padding: 0 30px;
+        margin-top: 100px;
+        margin-right: 10px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+    }
+    </style>
+    <link rel="shortcut icon" href="images/icon.png">
+  </head>
+
+  <body>
+
+
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="http://alpinenow.com">
+            <img src="images/logo.gif">
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/">Home</a></li>
+              <li><a href="https://alpine.atlassian.net/wiki/display/DOC/Documentation+Home">Help</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="images/front.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Welcome to Alpine Data Labs, the World's First Scriptless and Web-based Advanced Analytics Solution for Big Data and Hadoop.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/1.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Get started by creating a new workflow.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/2.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Define the details of the workflow.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/3.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Next, select the Data tab, and import your desired dataset.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/4.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">After choosing this dataset, a comma-separated values (csv) file in our case, Alpine will suggest how it should be formatted.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/5.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Drag this dataset into the workflow and right-click to preview the data.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/6.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">A preview of the newly imported data. Here, we are analyzing 1992 election data for counties throughout the United States.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/7.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Move to the Operators tab to start exploring the data and taking full advantage of Alpine. Here we are filtering our operators to focus on exploration.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/8.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Drag operators into the workflow and connect our data to the operators. Simply click on the dataset and drag one of the nubs to the desired operator. The red operator text tells us these operators still need to be configured.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/9.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">To configure, double click the operator and choose the properties you wish to configure on the right. Here, we are configuring the summary statistics operator by selecting the columns for which we want to see statistics. In this example, we will also choose to group by state.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/10.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">After configuring, we can analyze the data of this operator by right-clicking and selecting 'Step Run'.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/11.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Click the operator after analysis to view the results. You can also choose to view the data in its own window.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/12.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Summary statistics, in their own window, grouped by state.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/13.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Configuring the Scatter Plot Matrix operator.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/14.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Scatter Plot Matrix results in their own window. This shows a 0.69 correlation between percentage of residents in college and average income.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/15.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Configuring the Correlation operator.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/16.png" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <p class="lead">Correlation results in their own window.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="http://alpinenow.com/privacy-policy/">Privacy Policy</a>  &middot;  <a href="http://alpinenow.com/company/careers/">Careers</a>  &middot;  <a href="http://alpinenow.com/company/contact/">Contact Us</a></p>
+
+        <p>© 2013 Alpine Data Labs  &middot;  +1 650-212-0688  &middot;  1900 S. Norfolk St, San Mateo, CA 94403</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://getbootstrap.com/2.3.2/assets/js/jquery.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.min.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+  </body>
+</html>
